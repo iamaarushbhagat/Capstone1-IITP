@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .section { 
+      padding: 300px 0 100px; /* Increased top padding to ensure visibility */
+    }
+    .footer { 
+      background-color: #111827; 
+      color: #9ca3af; 
+      padding: 2rem 1rem; 
+      text-align: center; 
+    }
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery Management</a></li>
+          <li><a href="motor.html">Electric Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">VCUs & Protocols</a></li>
+          <li><a href="location.html">Live Location</a></li>
+          <li><a href="maintenance.html">Maintenance & Troubleshooting</a></li>
+          <li><a href="explore.html">Explore System</a></li>
+          <li><a href="support.html" class="text-blue-400">Support</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Support</h1>
+      <p class="text-xl mb-6">We're here to help! If you have any questions or need assistance, please reach out to us.</p>
+      <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+      <p>Email: info@neurovolt.com</p>
+      <p>Phone: +91 9554002933</p>
+      <p>For FAQs, please visit our <a href="#faq" class="text-blue-600">FAQ section</a>.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

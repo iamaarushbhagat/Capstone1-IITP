@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Motor & Powertrain</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reuse existing styles from main page */
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .hero-motor { 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/motor-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 0 100px;
+    }
+    .motor-card { 
+      background: rgba(255, 255, 255, 0.9); 
+      border-radius: 1rem; 
+      padding: 2rem; 
+      margin: 1rem; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+    .section { 
+      padding: 300px 0 100px; /* Increased top padding to ensure visibility */
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery Management</a></li>
+          <li><a href="motor.html" class="text-blue-400">Electric Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">VCUs & Protocols</a></li>
+          <li><a href="location.html">Live Location</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="plans.html">Plans</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-motor" data-aos="fade-up">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Electric Motor & Powertrain</h1>
+      <p class="text-xl mb-8">Ensuring smooth, reliable EV propulsion systems</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="motor-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-cogs text-blue-600 mr-2"></i>Motor Specifications</h2>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Power Output: <strong>150 kW</strong></li>
+            <li class="mb-2">Torque: <strong>300 Nm</strong></li>
+            <li class="mb-2">Efficiency: <strong>95%</strong></li>
+            <li class="mb-2">Cooling Type: <strong>Liquid Cooling</strong></li>
+          </ul>
+        </div>
+
+        <div class="motor-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-bolt text-blue-600 mr-2"></i>Powertrain Overview</h2>
+          <p>The powertrain integrates the electric motor, transmission, and drivetrain to deliver optimal performance and efficiency.</p>
+          <button class="btn mt-4"><i class="fas fa-info-circle mr-2"></i>Learn More</button>
+        </div>
+
+        <div class="motor-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-thermometer-half text-blue-600 mr-2"></i>Thermal Management</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <div class="text-2xl font-bold">32°C</div>
+              <div class="text-sm">Current Temp</div>
+            </div>
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <div class="text-2xl font-bold">25-40°C</div>
+              <div class="text-sm">Optimal Range</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="motor-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-chart-line text-blue-600 mr-2"></i>Performance Analytics</h2>
+          <canvas id="motorChart" class="w-full h-48"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    AOS.init();
+    
+    // Sample motor performance chart
+    const ctx = document.getElementById('motorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Motor Efficiency (%)',
+          data: [95, 94, 93, 96, 95, 97],
+          borderColor: '#2563eb',
+          tension: 0.4
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

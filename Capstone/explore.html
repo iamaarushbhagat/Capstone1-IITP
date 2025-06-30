@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reuse existing styles from main page */
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .hero-explore { 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/explore-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 0 100px;
+    }
+    .explore-card { 
+      background: rgba(255, 255, 255, 0.9); 
+      border-radius: 1rem; 
+      padding: 2rem; 
+      margin: 1rem; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+    .section { 
+      padding: 300px 0 100px; /* Increased top padding to ensure visibility */
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery Management</a></li>
+          <li><a href="motor.html">Electric Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">VCUs & Protocols</a></li>
+          <li><a href="location.html">Live Location</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="plans.html">Plans</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="maintenance.html">Maintenance & Troubleshooting</a></li>
+          <li><a href="explore.html" class="text-blue-400">Explore System</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-explore" data-aos="fade-up">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Explore System</h1>
+      <p class="text-xl mb-8">Discover the key systems that power your electric vehicle</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="explore-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-battery-full text-blue-600 mr-2"></i>Battery Management</h2>
+          <p>Learn about the battery management system that optimizes performance and extends battery life.</p>
+        </div>
+
+        <div class="explore-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-bolt text-blue-600 mr-2"></i>Electric Motor</h2>
+          <p>Explore the electric motor technology that drives efficiency and power in your vehicle.</p>
+        </div>
+
+        <div class="explore-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-plug text-blue-600 mr-2"></i>Charging Systems</h2>
+          <p>Understand the different charging systems available and how they impact your EV's performance.</p>
+        </div>
+
+        <div class="explore-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-cogs text-blue-600 mr-2"></i>Vehicle Control Units</h2>
+          <p>Discover how VCUs manage and control various vehicle functions for optimal performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

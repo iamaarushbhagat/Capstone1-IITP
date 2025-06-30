@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Management System (BMS)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reuse existing styles from main page */
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .hero-bms { 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/bms-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 200px 0 100px; /* Adjusted top padding to ensure visibility */
+      margin-top: 60px; /* Added margin to push content below the navbar */
+    }
+    .bms-card { 
+      background: rgba(255, 255, 255, 0.9); 
+      border-radius: 1rem; 
+      padding: 2rem; 
+      margin: 1rem; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+    .section { 
+      padding: 360px 0 100px; /* Increased top padding to 360 pixels */
+    }
+    .relative {
+      position: relative;
+    }
+    .absolute {
+      position: absolute;
+    }
+    .hover\:block:hover {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
+    #infoBox {
+      position: absolute;
+      background: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a> <!-- EV Logo -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html" class="text-blue-400">BMS</a></li>
+          <!-- Keep other navigation links same as index.html -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-bms" data-aos="fade-up">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Battery Management System</h1>
+      <p class="text-xl mb-8">Advanced monitoring and optimization for your EV battery pack</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bms-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-battery-full text-blue-600 mr-2"></i>Real-time Monitoring</h2>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Cell voltage tracking</li>
+            <li class="mb-2">Temperature monitoring</li>
+            <li class="mb-2">State of Charge (SOC)</li>
+            <li class="mb-2">State of Health (SOH)</li>
+          </ul>
+        </div>
+
+        <div class="bms-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-balance-scale text-blue-600 mr-2"></i>Cell Balancing</h2>
+          <div class="mb-4">
+            <label class="block text-gray-700 mb-2">Current Balance Status:</label>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <button class="btn mt-4"><i class="fas fa-sync-alt mr-2"></i>Initiate Balancing</button>
+        </div>
+
+        <div class="bms-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-thermometer-half text-blue-600 mr-2"></i>Thermal Management</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <div class="text-2xl font-bold">32°C</div>
+              <div class="text-sm">Current Temp</div>
+            </div>
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <div class="text-2xl font-bold">25-40°C</div>
+              <div class="text-sm">Optimal Range</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bms-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-chart-line text-blue-600 mr-2"></i>Performance Analytics</h2>
+          <canvas id="batteryChart" class="w-full h-48"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-4 text-center">Interactive Battery Overview</h2>
+      <div class="relative text-center mb-8">
+        <img src="assets/images/battery.png" alt="Battery" usemap="#batteryMap" class="mx-auto" />
+        <map name="batteryMap">
+          <area shape="rect" coords="34,44,270,350" alt="Cell Voltage" href="#" onclick="showInfo('Cell Voltage: 3.7V')" />
+          <area shape="rect" coords="290,44,550,350" alt="Temperature" href="#" onclick="showInfo('Temperature: 32°C')" />
+          <area shape="rect" coords="34,360,270,600" alt="SOC" href="#" onclick="showInfo('State of Charge: 85%')" />
+          <area shape="rect" coords="290,360,550,600" alt="SOH" href="#" onclick="showInfo('State of Health: 95%')" />
+        </map>
+      </div>
+      <div id="infoBox" class="hidden"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+            <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    AOS.init();
+    
+    // Sample battery chart
+    const ctx = document.getElementById('batteryChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Battery Health (%)',
+          data: [100, 99, 98, 97, 96, 95],
+          borderColor: '#2563eb',
+          tension: 0.4
+        }]
+      }
+    });
+
+    function showInfo(message) {
+      const infoBox = document.getElementById('infoBox');
+      infoBox.innerText = message;
+      infoBox.classList.remove('hidden');
+      infoBox.style.position = 'absolute';
+      infoBox.style.top = '50%'; // Adjust as needed
+      infoBox.style.left = '50%'; // Adjust as needed
+      infoBox.style.transform = 'translate(-50%, -50%)'; // Center the box
+    }
+  </script>
+</body>
+</html>

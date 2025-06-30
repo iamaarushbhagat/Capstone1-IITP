@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Vehicle Location</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Reuse existing styles from main page */
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .hero-location { 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/location-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 0 100px;
+    }
+    .location-card { 
+      background: rgba(255, 255, 255, 0.9); 
+      border-radius: 1rem; 
+      padding: 2rem; 
+      margin: 1rem; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery Management</a></li>
+          <li><a href="motor.html">Electric Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">VCUs & Protocols</a></li>
+          <li><a href="location.html" class="text-blue-400">Live Location</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="plans.html">Plans</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-location" data-aos="fade-up">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Current Vehicle Location</h1>
+      <p class="text-xl mb-8">Live GPS tracking for fleet monitoring and diagnostics</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-100">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="location-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Live GPS Tracking</h2>
+          <p>Monitor the real-time location of your vehicles with our advanced GPS tracking system.</p>
+        </div>
+
+        <div class="location-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-users text-blue-600 mr-2"></i>Fleet Monitoring</h2>
+          <p>Manage your fleet efficiently by tracking multiple vehicles simultaneously, ensuring optimal routes and safety.</p>
+        </div>
+
+        <div class="location-card" data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-tools text-blue-600 mr-2"></i>Diagnostics</h2>
+          <p>Receive diagnostic information about your vehicles, including speed, fuel levels, and maintenance alerts.</p>
+        </div>
+
+        <div class="location-card" data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4"><i class="fas fa-chart-line text-blue-600 mr-2"></i>Location Analytics</h2>
+          <canvas id="locationChart" class="w-full h-48"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    AOS.init();
+    
+    // Sample location analytics chart
+    const ctx = document.getElementById('locationChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Vehicles Active',
+          data: [5, 10, 15, 20, 25, 30],
+          borderColor: '#2563eb',
+          tension: 0.4
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

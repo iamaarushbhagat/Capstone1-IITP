@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .navbar { 
+      background-color: #111827; 
+      padding: 1rem; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    .section { 
+      padding: 300px 0 100px; /* Set top padding to 300px */
+    }
+    .footer { 
+      background-color: #111827; 
+      color: #9ca3af; 
+      padding: 2rem 1rem; 
+      text-align: center; 
+    }
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    .logo {
+      height: 90px; /* Set the height of the logo to 90 pixels */
+      width: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html"><img src="assets/images/evlogo.png" alt="EV Logo" class="logo"></a> <!-- Updated Logo Image Path -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery Management</a></li>
+          <li><a href="motor.html">Electric Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">VCUs & Protocols</a></li>
+          <li><a href="location.html">Live Location</a></li>
+          <li><a href="maintenance.html">Maintenance & Troubleshooting</a></li>
+          <li><a href="explore.html">Explore System</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="plans.html" class="text-blue-400">Plans</a></li> <!-- Plans Button -->
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container text-center">
+      <h1 class="text-5xl font-bold mb-4">Our Plans</h1>
+      <p class="text-xl mb-6">Choose the plan that best suits your needs.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-2">Basic Plan</h2>
+          <p class="mb-4">Ideal for individual users.</p>
+          <p class="text-xl font-semibold">Rs.4000/month</p>
+          <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded">Select</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-2">Standard Plan</h2>
+          <p class="mb-4">Perfect for small businesses.</p>
+          <p class="text-xl font-semibold">Rs.7000/month</p>
+          <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded">Select</button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-2">Premium Plan</h2>
+          <p class="mb-4">Best for large enterprises.</p>
+          <p class="text-xl font-semibold">Rs.10000/month</p>
+          <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded">Select</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

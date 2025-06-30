@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EV Diagnosis & Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/ev-background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 0;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+    }
+    .btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1e40af;
+      transform: translateY(-2px);
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .footer {
+      background-color: #111827;
+      color: #9ca3af;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 100px;
+    }
+    .navbar {
+      background-color: #111827;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+    .logo {
+      height: 40px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .features {
+      padding: 80px 0;
+    }
+    .app-showcase {
+      padding: 100px 0;
+    }
+    .app-showcase img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .app-showcase .container {
+      align-items: center;
+      gap: 50px;
+    }
+    .app-showcase h2 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .app-showcase p {
+      font-size: 18px;
+      color: #5f6368;
+      margin-bottom: 30px;
+    }
+    .app-buttons {
+      display: flex;
+      gap: 20px;
+    }
+    .app-button {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .app-button:hover {
+      background-color: #252525;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <img src="assets/images/evlogo.png" alt="EV Logo" class="logo">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="bms.html">Battery</a></li>
+          <li><a href="motor.html">Motor</a></li>
+          <li><a href="charging.html">Charging</a></li>
+          <li><a href="vcu.html">Control Units</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="plans.html">Plans</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h1 class="text-5xl font-bold mb-4">Welcome to EV Diagnosis & Management</h1>
+      <p class="text-xl mb-6">Smarter, Safer, and More Efficient Electric Mobility</p>
+      <a href="bms.html" class="btn">Explore System</a>
+    </div>
+  </section>
+
+  <section class="features py-20 bg-gray-100">
+    <div class="container">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Our Core Features</h2>
+      <div class="card-grid">
+        <div class="card" data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-2"><a href="bms.html">Battery Management</a></h3>
+          <p>Advanced monitoring and optimization of battery performance.</p>
+        </div>
+        <div class="card" data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-2"><a href="motor.html">Electric Motor</a></h3>
+          <p>Ensuring smooth, reliable EV propulsion systems.</p>
+        </div>
+        <div class="card" data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-2"><a href="charging.html">Charging System</a></h3>
+          <p>Support for fast, smart, and safe charging solutions.</p>
+        </div>
+        <div class="card" data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-2"><a href="vcu.html">Vehicle Control</a></h3>
+          <p>Real-time control with advanced communication protocols.</p>
+        </div>
+        <div class="card" data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-2"><a href="location.html">Live Location</a></h3>
+          <p>GPS tracking for fleet monitoring and diagnostics.</p>
+        </div>
+        <div class="card" data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-2"><a href="info.html">Maintenance</a></h3>
+          <p>Comprehensive maintenance and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-showcase bg-white py-20" id="app">
+    <div class="container flex flex-col md:flex-row items-center" data-aos="fade-up">
+      <div class="md:w-1/2">
+        <h2 class="text-4xl font-bold mb-4">Control via Mobile App</h2>
+        <p class="text-gray-600 mb-6">Track and manage your vehicle in real-time from anywhere using our user-friendly mobile application.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="app-button">
+            <i class="fab fa-apple mr-2"></i> App Store
+          </a>
+          <a href="#" class="app-button">
+            <i class="fab fa-google-play mr-2"></i> Google Play
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <img src="assets/images/application.png" alt="Mobile App Screenshot" class="app-showcase img">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 EV Diagnosis & Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
