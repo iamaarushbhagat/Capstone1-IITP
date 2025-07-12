@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayushman B | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #444;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-left: 5px solid #007acc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.01);
+    }
+    .clickable {
+      cursor: pointer;
+    }
+    .details {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #222;
+      color: white;
+    }
+  </style>
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Ayushman B</h1>
+    <p>Computer Science & Data Analytics | Agriculture | Volunteer | Tech Enthusiast</p>
+  </header>
+  
+  <nav>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#publications">Publications</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#activities">Activities</a>
+  </nav>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">Indian Institute of Technology, Patna<br />BSc in Computer Science & Data Analytics<br /><em>Expected: July 2027</em></div>
+    <div class="card">Assam Agricultural University<br />BSc (Hons) in Agriculture<br /><em>Expected: August 2027</em></div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Web Development, UI/UX Design, Data Analytics</li>
+      <li>Google Analytics, Graphic Design (Photoshop, Canva)</li>
+      <li>Microsoft Office, Libre Office, Google Suite</li>
+      <li>WordPress Site Development</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card clickable" onclick="toggleDetails('p1')">Project – Aadya (ATL Marathon’21 Award Winning Project)</div>
+    <div id="p1" class="details">Sep 2021 – Apr 2022<br />Developed innovative solution for ATL Marathon.</div>
+    
+    <div class="card clickable" onclick="toggleDetails('p2')">Project – Indra (For ATL Space Challenge)</div>
+    <div id="p2" class="details">Nov 2022 – Mar 2023<br />Worked on space-tech problem-solving challenge.</div>
+
+    <div class="card clickable" onclick="toggleDetails('p3')">Analysis on flower nectar vs. petal color</div>
+    <div id="p3" class="details">Aug 2019 – Dec 2019<br />Studied color-nectar correlation in flowers.</div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <div class="card">Best Actor Award – College Week 2024</div>
+    <div class="card">Winner – BRICS Math International 2020</div>
+    <div class="card">Winner – NSS Yuva Samvad Quiz 2024</div>
+    <div class="card">Winner – Mime Competition, Vina Pani Samaroh</div>
+    <div class="card">Appreciation – Aryabhatta Anusandhan Prakalpa, IIT Patna</div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="card">Bioinformatics and Big Data – BioNE E-Zine (2024)</div>
+    <div class="card">Uncultivated Plants of NE India – Farm2Food (2025)</div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Google Analytics, AI Ads – Google</li>
+      <li>UX – Accenture</li>
+      <li>Urban Forestry – FAO, UN</li>
+      <li>Generative AI & LLMs – Google Cloud Skill Boost</li>
+    </ul>
+  </section>
+
+  <section id="activities">
+    <h2>Activities & Volunteering</h2>
+    <div class="card">Volunteer – NSS (2023 – Present)</div>
+    <div class="card">Volunteer – Farm2Food Foundation (2024)</div>
+    <div class="card">Peer Tutor – Schoolhouse.world (2021 – Present)</div>
+    <div class="card">India Team Member – Schoolhouse.world (2022)</div>
+    <div class="card">Peer Reviewer – Schoolhouse.world (2022)</div>
+    <div class="card">Co-founder – Robotics & AI Club</div>
+    <div class="card">My Bharat Ambassador – NSS, NER</div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Ayushman B | Golaghat, Assam</p>
+  </footer>
+</body>
+</html>

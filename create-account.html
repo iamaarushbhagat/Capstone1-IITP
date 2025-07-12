@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVolt - Create Account</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .account-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="account-container">
+        <h2>Create Your Account</h2>
+        <form id="accountForm">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <select id="vehicleSelect" required>
+                <option value="" disabled selected>Select Your Vehicle</option>
+                <option value="car1">Car Model 1</option>
+                <option value="car2">Car Model 2</option>
+                <option value="car3">Car Model 3</option>
+                <option value="car4">Car Model 4</option>
+            </select>
+            <input type="text" id="vin" placeholder="Vehicle Identification Number (VIN)" required>
+            <input type="text" id="licensePlate" placeholder="License Plate Number" required>
+            <button type="submit">Create Account</button>
+            <p class="error" id="errorMessage"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('accountForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const vehicle = document.getElementById('vehicleSelect').value;
+            const vin = document.getElementById('vin').value;
+            const licensePlate = document.getElementById('licensePlate').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Simple validation
+            if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "" || vehicle === "" || vin === "" || licensePlate === "") {
+                errorMessage.textContent = "Please fill in all fields.";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match.";
+                return;
+            }
+
+            // Simulate account creation
+            alert(`Account created for ${firstName} ${lastName} with vehicle ${vehicle}.`);
+            // Redirect to the login page or another page
+            window.location.href = "login.html"; // Change this to your login page
+        });
+    </script>
+</body>
+</html>
